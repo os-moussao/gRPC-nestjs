@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+// https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/wrappers.proto
+import "google/protobuf/wrappers.proto";
+import "common.proto";
+
+service ArithmeticService {
+  rpc Sum(IntArray) returns (google.protobuf.Int64Value) {}
+  rpc Multiply(IntArray) returns (google.protobuf.Int64Value) {}
+}

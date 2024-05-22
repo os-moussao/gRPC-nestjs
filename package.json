@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "generate-types": "protoc --plugin=./node_modules/.bin/protoc-gen-ts_proto --ts_proto_opt=nestJs=true -I=./protos --ts_proto_out=./protos-ts",
+    "run:calculator": "cd ./apps/calculator && npm run start:dev",
+    "run:gateway": "cd ./apps/gateway && npm run start:dev"
+  },
+  "dependencies": {
+    "ts-proto": "^1.176.0"
+  }
+}
