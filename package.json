@@ -1,8 +1,10 @@
 {
   "scripts": {
-    "build": "npm install --prefix ./apps/calc-service && npm install --prefix ./apps/gateway",
+    "calc:install": "npm install --prefix ./apps/calc-service",
+    "gateway:install": "npm install --prefix ./apps/gateway",
+    "build": "npm install && npm run calc:install && npm run gateway:install",
     "generate-types": "protoc --plugin=./node_modules/.bin/protoc-gen-ts_proto --ts_proto_opt=nestJs=true -I=./protos --ts_proto_out=./protos-ts",
-    "run:calculator": "npm run start:dev --prefix ./apps/calc-service",
+    "run:calc": "npm run start:dev --prefix ./apps/calc-service",
     "run:gateway": "npm run start:dev --prefix ./apps/gateway"
   },
   "dependencies": {
