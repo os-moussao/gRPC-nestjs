@@ -9,14 +9,23 @@ import { IntArray } from './protos-ts/common';
 @BitwiseServiceControllerMethods()
 export class BitwiseController implements BitwiseServiceController {
   and(req: IntArray) {
-    return { value: 3 };
+    const { values } = req;
+    return {
+      value: values.length ? values.reduce((acc, curr) => acc & curr) : 0,
+    };
   }
 
   or(req: IntArray) {
-    return { value: 4 };
+    const { values } = req;
+    return {
+      value: values.reduce((acc, curr) => acc | curr, 0),
+    };
   }
 
   xor(req: IntArray) {
-    return { value: 5 };
+    const { values } = req;
+    return {
+      value: values.reduce((acc, curr) => acc ^ curr, 0),
+    };
   }
 }

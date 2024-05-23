@@ -9,10 +9,16 @@ import { IntArray } from './protos-ts/common';
 @ArithmeticServiceControllerMethods()
 export class ArithmeticController implements ArithmeticServiceController {
   sum(req: IntArray) {
-    return { value: 1 };
+    const { values } = req;
+    return {
+      value: values.reduce((acc, curr) => acc + curr, 0),
+    };
   }
 
   multiply(req: IntArray) {
-    return { value: 2 };
+    const { values } = req;
+    return {
+      value: values.reduce((acc, curr) => acc * curr, 1),
+    };
   }
 }
