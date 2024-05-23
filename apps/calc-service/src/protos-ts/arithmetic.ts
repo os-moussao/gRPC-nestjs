@@ -10,9 +10,9 @@ import { Observable } from "rxjs";
 import { IntArray } from "./common";
 import { Int64Value } from "./google/protobuf/wrappers";
 
-export const protobufPackage = "";
+export const protobufPackage = "arithmetic";
 
-export const _PACKAGE_NAME = "";
+export const ARITHMETIC_PACKAGE_NAME = "arithmetic";
 
 export interface ArithmeticServiceClient {
   sum(request: IntArray): Observable<Int64Value>;

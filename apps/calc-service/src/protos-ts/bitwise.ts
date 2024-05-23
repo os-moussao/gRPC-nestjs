@@ -10,9 +10,9 @@ import { Observable } from "rxjs";
 import { IntArray } from "./common";
 import { Int64Value } from "./google/protobuf/wrappers";
 
-export const protobufPackage = "";
+export const protobufPackage = "bitwise";
 
-export const _PACKAGE_NAME = "";
+export const BITWISE_PACKAGE_NAME = "bitwise";
 
 export interface BitwiseServiceClient {
   and(request: IntArray): Observable<Int64Value>;
