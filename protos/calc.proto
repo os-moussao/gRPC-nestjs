@@ -1,6 +1,0 @@
-syntax = "proto3";
-
-package calculator;
-
-import "arithmetic.proto";
-import "bitwise.proto";

@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+package bitwise;
+
 // https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/wrappers.proto
 import "google/protobuf/wrappers.proto";
 import "common.proto";
