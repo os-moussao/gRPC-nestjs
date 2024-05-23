@@ -18,6 +18,10 @@ async function bootstrap() {
           path.resolve(__dirname, '../../../protos/arithmetic.proto'),
           path.resolve(__dirname, '../../../protos/bitwise.proto'),
         ],
+        loader: {
+          longs: Number,
+          arrays: true,
+        },
       },
     },
   );
