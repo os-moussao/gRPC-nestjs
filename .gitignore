@@ -1,2 +1,4 @@
 node_modules
-protos-ts
+
+# ignore protos-ts only in the root directory
+/protos-ts
