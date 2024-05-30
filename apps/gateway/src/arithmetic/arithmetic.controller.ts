@@ -3,6 +3,7 @@ import { ClientGrpc } from '@nestjs/microservices';
 import {
   ARITHMETIC_SERVICE_NAME,
   ArithmeticServiceClient,
+  SortMsg,
 } from 'src/protos-ts/arithmetic';
 import { IntArray } from 'src/protos-ts/common';
 import { CALC_MICROSERVICE_CLIENT } from 'src/common/constants';
@@ -30,5 +31,10 @@ export class ArithmeticController implements OnModuleInit {
   @Post('multiply')
   multiply(@Body() nums: IntArray) {
     return this.arithmeticService.multiply(nums);
+  }
+
+  @Post('sort')
+  sort(@Body() body: SortMsg) {
+    return this.arithmeticService.sort(body);
   }
 }

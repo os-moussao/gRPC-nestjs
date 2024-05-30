@@ -12,23 +12,37 @@ import { Int64Value } from "./google/protobuf/wrappers";
 
 export const protobufPackage = "arithmetic";
 
+export enum OrderEnum {
+  INC = "INC",
+  DEC = "DEC",
+}
+
+export interface SortMsg {
+  values: number[];
+  order: OrderEnum;
+}
+
 export const ARITHMETIC_PACKAGE_NAME = "arithmetic";
 
 export interface ArithmeticServiceClient {
   sum(request: IntArray): Observable<Int64Value>;
 
   multiply(request: IntArray): Observable<Int64Value>;
+
+  sort(request: SortMsg): Observable<IntArray>;
 }
 
 export interface ArithmeticServiceController {
   sum(request: IntArray): Promise<Int64Value> | Observable<Int64Value> | Int64Value;
 
   multiply(request: IntArray): Promise<Int64Value> | Observable<Int64Value> | Int64Value;
+
+  sort(request: SortMsg): Promise<IntArray> | Observable<IntArray> | IntArray;
 }
 
 export function ArithmeticServiceControllerMethods() {
   return function (constructor: Function) {
-    const grpcMethods: string[] = ["sum", "multiply"];
+    const grpcMethods: string[] = ["sum", "multiply", "sort"];
     for (const method of grpcMethods) {
       const descriptor: any = Reflect.getOwnPropertyDescriptor(constructor.prototype, method);
       GrpcMethod("ArithmeticService", method)(constructor.prototype[method], method, descriptor);

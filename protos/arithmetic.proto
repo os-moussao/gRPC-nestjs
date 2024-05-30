@@ -6,7 +6,18 @@ package arithmetic;
 import "google/protobuf/wrappers.proto";
 import "common.proto";
 
+enum OrderEnum {
+  INC = 0;
+  DEC = 1;
+}
+
+message SortMsg {
+  repeated sint64 values = 1;
+  OrderEnum order = 2;
+}
+
 service ArithmeticService {
   rpc Sum(IntArray) returns (google.protobuf.Int64Value) {}
   rpc Multiply(IntArray) returns (google.protobuf.Int64Value) {}
+  rpc Sort(SortMsg) returns (IntArray) {}
 }

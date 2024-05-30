@@ -21,6 +21,7 @@ async function bootstrap() {
         loader: {
           longs: Number,
           arrays: true,
+          enums: String,
         },
       },
     },
