@@ -3,8 +3,8 @@ import { ClientGrpc } from '@nestjs/microservices';
 import {
   ARITHMETIC_SERVICE_NAME,
   ArithmeticServiceClient,
-} from 'protos-ts/arithmetic';
-import { IntArray } from 'protos-ts/common';
+} from 'src/protos-ts/arithmetic';
+import { IntArray } from 'src/protos-ts/common';
 import { CALC_MICROSERVICE_CLIENT } from 'src/common/constants';
 
 @Controller('arithmetic')

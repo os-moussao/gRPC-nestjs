@@ -1,8 +1,7 @@
 import { Body, Controller, Inject, OnModuleInit, Post } from '@nestjs/common';
 import { ClientGrpc } from '@nestjs/microservices';
-import { BITWISE_SERVICE_NAME, BitwiseServiceClient } from 'protos-ts/bitwise';
-import { IntArray } from 'protos-ts/common';
-import { lastValueFrom } from 'rxjs';
+import { BITWISE_SERVICE_NAME, BitwiseServiceClient } from 'src/protos-ts/bitwise';
+import { IntArray } from 'src/protos-ts/common';
 import { CALC_MICROSERVICE_CLIENT } from 'src/common/constants';
 
 @Controller('bitwise')
