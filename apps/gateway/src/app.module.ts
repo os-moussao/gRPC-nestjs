@@ -6,7 +6,6 @@ import { BITWISE_PACKAGE_NAME } from 'src/protos-ts/bitwise';
 import { ArithmeticController } from './arithmetic/arithmetic.controller';
 import { BitwiseController } from './bitwise/bitwise.controller';
 import * as path from 'path';
-
 @Module({
   imports: [
     ClientsModule.register([
