@@ -1,9 +1,4 @@
-import {
-  BadRequestException,
-  Controller,
-  NotFoundException,
-  UseFilters,
-} from '@nestjs/common';
+import { Controller } from '@nestjs/common';
 import {
   ArithmeticServiceController,
   ArithmeticServiceControllerMethods,
@@ -11,22 +6,10 @@ import {
   SortMsg,
 } from './protos-ts/arithmetic';
 import { IntArray } from './protos-ts/common';
-import { NotFoundError, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { RpcException } from '@nestjs/microservices';
-
-import { Catch, RpcExceptionFilter, ArgumentsHost } from '@nestjs/common';
-import { throwError } from 'rxjs';
-
 import * as grpc from '@grpc/grpc-js';
 
-@Catch(RpcException)
-export class ExceptionFilter implements RpcExceptionFilter<RpcException> {
-  catch(exception: RpcException, host: ArgumentsHost): Observable<any> {
-    return throwError(() => exception.getError());
-  }
-}
-
-@UseFilters(ExceptionFilter)
 @Controller()
 @ArithmeticServiceControllerMethods()
 export class ArithmeticController implements ArithmeticServiceController {
