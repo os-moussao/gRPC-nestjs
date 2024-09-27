@@ -23,9 +23,9 @@
     "@grpc/grpc-js": "^1.10.8",
     "@grpc/proto-loader": "^0.7.13",
     "@nestjs/common": "^10.0.0",
-    "@nestjs/core": "^10.0.0",
+    "@nestjs/core": "^10.4.4",
     "@nestjs/microservices": "^10.3.8",
-    "@nestjs/platform-express": "^10.0.0",
+    "@nestjs/platform-express": "^10.4.4",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1"
   },
